@@ -56,7 +56,7 @@ export default function Banner({ setCompany }) {
               },
             }}
           >
-            to find the perfect match for YOU!
+            to find the perfect match for Yeah!
           </Typography>
           <List>
             <ListItemText>
