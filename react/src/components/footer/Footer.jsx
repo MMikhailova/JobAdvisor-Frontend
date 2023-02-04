@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Grid, Typography, List, ListItem } from "@mui/material";
+import { Grid, List, ListItem } from "@mui/material";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import GitHubIcon from "@mui/icons-material/GitHub";
@@ -14,6 +14,7 @@ export default function Footer() {
     <>
       <Box
         sx={{
+          textAlign: "center",
           backgroundImage: `url('${process.env.PUBLIC_URL}/assets/footer-bg.png')`,
           backgroundRepeat: "no-repeat",
           alignItems: "stretch",
@@ -24,31 +25,29 @@ export default function Footer() {
           fontSize: "0.875rem",
           fontWeight: "700",
           flexDirection: "row",
-          mt: 5,
+          py: 2,
         }}
       >
         <Grid container spacing={2} justifyContent="center">
-          <Grid item md={4} lg={4}>
-            <Typography sx={{ ml: 13 }}>
-              <img
-                src="../assets/ja-logo.png"
-                alt="jobadvisorlogo"
-                width={170}
-                height={150}
-                onClick={() => navigate("/")}
-              />
-            </Typography>
+          <Grid item md={4} lg={4} justifyContent="center">
+            <img
+              src="../assets/ja-logo.png"
+              alt="jobadvisorlogo"
+              width={170}
+              height={150}
+              onClick={() => navigate("/")}
+            />
             <Stack
               direction="row"
               spacing={2}
-              sx={{ mx: 10, mb: 3, marginLeft: 19 }}
+              sx={{ mb: 3, justifyContent: "center" }}
             >
               <Link href="https://github.com/Job-Advisor-project">
-                <GitHubIcon />
+                <GitHubIcon sx={{ color: "#65d3af" }} />
               </Link>
 
               <Link href="https://www.youtube.com/watch?v=2pmx9FF3mdI">
-                <YouTubeIcon />
+                <YouTubeIcon sx={{ color: "#65d3af" }} />
               </Link>
             </Stack>
           </Grid>
@@ -94,53 +93,6 @@ export default function Footer() {
                   }}
                 >
                   Contact Us
-                </Button>
-              </ListItem>
-            </List>
-          </Grid>
-          <Grid item md={4} lg={2} sx={{ my: 5 }}>
-            <List>
-              <ListItem>
-                <Button
-                  sx={{
-                    fontWeight: "200",
-                    color: "#66cdaa",
-                  }}
-                  variant="Text"
-                  onClick={() => {
-                    navigate("/Privacy");
-                  }}
-                >
-                  Privacy &amp; Policy
-                </Button>
-              </ListItem>
-              <ListItem>
-                <Button
-                  sx={{
-                    fontWeight: "200",
-                    color: "#66cdaa",
-                  }}
-                  variant="Text"
-                  onClick={() => {
-                    navigate("/TermsofUse");
-                  }}
-                >
-                  Terms of Use
-                </Button>
-              </ListItem>
-
-              <ListItem>
-                <Button
-                  sx={{
-                    fontWeight: "200",
-                    color: "#66cdaa",
-                  }}
-                  variant="Text"
-                  onClick={() => {
-                    navigate("/CareersPage");
-                  }}
-                >
-                  Careers
                 </Button>
               </ListItem>
             </List>

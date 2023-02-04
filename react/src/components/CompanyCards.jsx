@@ -12,18 +12,32 @@ import { useNavigate } from "react-router-dom";
 export default function Cards({ companies, setCompany }) {
   const navigate = useNavigate();
   const responsive = {
-    flex: { xs: "100%", sm: "calc(50% - 20px)", md: "calc(33% - 20px)" },
-    mx: { xs: "auto", sm: "auto", md: 5, lg: 10 },
+    flex: {
+      xs: "100%",
+      sm: "calc(50% - 3rem)",
+      md: "calc(33% - 3rem)",
+      lg: "calc(33% - 3rem)",
+    },
+    mx: { xs: "auto", sm: "auto", md: 1, lg: 1 },
+    my: { xs: "auto", sm: "auto", md: 1, lg: 1 },
+    py: { xs: "auto", sm: "auto", md: 2, lg: 2 },
+    px: { xs: "auto", sm: "auto", md: 1, lg: 1 },
     mt: { xs: 0.5, sm: 0.5, md: 1, lg: 1 },
   };
   return (
     <Box
       sx={{
-        flexDirection: "column",
-        flexWrap: "wrap",
+        flexDirection: {
+          xs: "column",
+          sm: "column",
+          md: "row",
+          lg: "row",
+        },
+        flexWrap: "wrap-reverse",
         justifyItems: "center",
         display: "flex",
         borderRadius: 2,
+        mx: { xs: "auto", sm: "auto", md: 10, lg: 15 },
       }}
     >
       {companies &&
@@ -38,6 +52,11 @@ export default function Cards({ companies, setCompany }) {
                   alt="logo"
                   src={`${item.attributes.company.data.attributes.image.data.attributes.formats.thumbnail.url}`}
                   variant="square"
+                  sx={{
+                    width: "4rem",
+                    height: "4rem",
+                    objectFit: "scale-down",
+                  }}
                 ></Avatar>
               }
               title={
@@ -60,6 +79,7 @@ export default function Cards({ companies, setCompany }) {
                 key={item.attributes.company.data.attributes.name}
                 variant="body2"
                 color="text.secondary"
+                sx={{ mb: 0 }}
               >
                 {item.attributes.company.data.attributes.description}
               </Typography>
