@@ -6,9 +6,6 @@ import CompanyOverview from "./pages/CompanyOverview";
 import HomePage from "./pages/Home";
 import SearchResult from "./pages/SearchResult";
 import ContactUs from "./pages/Other/ContactUs";
-import Privacy from "./pages/Other/Privacy";
-import TermsofUse from "./pages/Other/TermsofUse";
-import CareersPage from "./pages/Other/CareersPage";
 import ReviewForm from "./pages/ReviewForm";
 
 export default function App() {
@@ -47,9 +44,6 @@ export default function App() {
           <Route path="/aboutUs" element={<AboutUs />} />
           <Route path="/team" element={<Team />} />
           <Route path="/contactUs" element={<ContactUs />} />
-          <Route path="/privacy" element={<Privacy />} />
-          <Route path="/termsofUse" element={<TermsofUse />} />
-          <Route path="/careersPage" element={<CareersPage />} />
         </Routes>
       </Router>
     </div>

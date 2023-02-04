@@ -28,6 +28,7 @@ export default function SearchResult({ tag, setCompany }) {
           backgroundSize: "cover",
           maxHeight: "auto",
           maxWidth: "100%",
+          // px: 2,
         }}
       >
         <TitleTag selected={selected}></TitleTag>

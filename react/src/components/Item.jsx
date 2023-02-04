@@ -18,7 +18,7 @@ export default function Item({ item, onSelect }) {
         navigate("/searchResult");
       }}
     >
-      <Grid container spacing={2} sx={{ justifyContent: "center" }}>
+      <Grid container spacing={0} sx={{ justifyContent: "center" }}>
         <Grid item md={6} lg={12}>
           <Typography sx={{ ml: 4 }}>
             <img
