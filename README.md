@@ -24,9 +24,14 @@
 
 ## General info
 
-> At Job Advisor, We help people to get jobs. We believe financial independence
-> can help people live up to their potential and get back control of their own
-> lives .
+Job Advisor is my graduation project from the nine-month Web Development program at HackYourFuture Belgium.  
+The project has been developed by a team of three people, find the original version [here](https://github.com/Job-Advisor-project/FrontEnd).  
+After the program, I took it upon myself to improve some parts of the project.  
+The things that have been improved lately:
+- Responsiveness
+- UX/UI
+- Deployment bugs on Railway.
+
 
 ## Design protoype
 
@@ -61,103 +66,53 @@
 ## Sample React code
 
 The frontend is using React material UI components. Here is a look at the script
-tag for the banner component:
+tag for the Search bar component:
 
 ```js
-import { Box, Grid, Typography, List, ListItemText } from "@mui/material";
-import SearchBar from "./SearchBar";
+import { useState } from "react";
+import TextField from "@mui/material/TextField";
+import Autocomplete from "@mui/material/Autocomplete";
+import { getCompanyListVm } from "../api/viewModelels/companyListVm";
+import { Grid } from "@mui/material";
 import { useNavigate } from "react-router-dom";
-
-export default function Banner({ setCompany }) {
+import * as React from "react";
+export default function SearchBar({ setCompany }) {
   const navigate = useNavigate();
+  const [data, setData] = useState([]);
+  const [value, setValue] = useState(undefined);
+  const [inputValue, setInputValue] = useState();
   return (
-    <Box
-      sx={{
-        alignItems: "stretch",
-        backgroundImage: `url('${process.env.PUBLIC_URL}/assets/background.png')`,
-        backgroundRepeat: "no-repeat",
-        backgroundPosition: "center",
-        backgroundSize: "cover",
-        height: "auto",
-        maxWidth: "100%",
-        fontSize: "0.875rem",
-        fontWeight: "700",
-      }}
-    >
-      <Grid item xs={6} md={4}>
-        <Typography sx={{ ml: 4 }}>
-          <img
-            src="../assets/ja-logo.png"
-            alt="jobadvisorlogo"
-            width={170}
-            height={150}
-            onClick={() => navigate("/")}
-          />
-        </Typography>
-      </Grid>
-      <Grid container sx={{ justifyContent: "center" }}>
-        <Grid item md={5} lg={6} sx={{ my: 5, mx: 3 }}>
-          <Typography
-            sx={{
-              textAlign: "center",
-              fontFamily: "sans-serif",
-              typography: {
-                md: "h3",
-                sm: "h4",
-                xs: "h5",
-              },
-            }}
-          >
-            Discover a company DNA
-          </Typography>
-          <Typography
-            variant="subtitle1"
-            sx={{
-              textAlign: "center",
-              fontFamily: "sans-serif",
-              typography: {
-                md: "h3",
-                sm: "h4",
-                xs: "h5",
-              },
-            }}
-          >
-            to find perfect match for YOU!
-          </Typography>
-          <List>
-            <ListItemText>
-              <Typography
-                lineHeight={2}
-                sx={{
-                  mt: 3,
-                  textAlign: "center",
-                  typography: { md: "body1", sm: "body2" },
-                }}
-              >
-                Job Advisor helps companies promote the right values and job
-                seekers make the right career choice.
-              </Typography>
-            </ListItemText>
-            <SearchBar setCompany={setCompany}></SearchBar>
-          </List>
-        </Grid>
-        <Grid item md={5} lg={4} sx={{ mb: 5 }}>
-          <Typography>
-            <img
-              src="../../assets/figma download/edited-idea.png"
-              alt="women"
-              style={{
-                width: "100%",
-                height: "auto",
-                textAlign: "center",
-              }}
+    <Grid container>
+      <Grid item xs={12} md={6} lg={8}>
+        <Autocomplete
+          value={value}
+          onChange={(event, newValue) => {
+            data.includes(newValue) && setValue(newValue);
+            setCompany(newValue);
+            navigate("/companyOverview");
+          }}
+          disablePortal
+          inputValue={inputValue}
+          onInputChange={(event, newInputValue) => {
+            setInputValue(newInputValue);
+          }}
+          id="controllable-states-demo"
+          options={data}
+          sx={{ alignSelf: "center" }}
+          renderInput={(params) => (
+            <TextField
+              sx={{ backgroundColor: "white", maxWidth: "100%" }}
+              {...params}
+              label="company name"
+              onClick={() => getCompanyListVm().then((v) => setData(v))}
             />
-          </Typography>
-        </Grid>
+          )}
+        />
       </Grid>
-    </Box>
+    </Grid>
   );
 }
+
 ```
 
 ## App demo video
@@ -221,7 +176,20 @@ export default function Banner({ setCompany }) {
   `/accessibility_report`
 
 - ## Authors
+![Maria](https://avatars.githubusercontent.com/u/98428800?v=4>)
 
+- [Maria](https://github.com/MMikhailova) // Project Manager Frontend , Backend
+  & DevOps
+  
+![Fenny](https://avatars.githubusercontent.com/u/97218974?v=4)
+
+- [Fenny](https://github.com/FennyWilriani) // UI/UX Designer, Frontend & DevOps
+
+![Minju ](https://avatars.githubusercontent.com/u/32439811?v=4)
+
+- [Minju](https://github.com/minjupgeorge) // Team Leader Frontend & DevOps
+
+- ## Coaches
 ![Yoshimalaise](https://wise.vub.ac.be/sites/default/files/members/2021-09/yoshi.png)
 
 - [YoshiMalaise](https://github.com/yoshimalaise) // Coach
@@ -230,15 +198,6 @@ export default function Banner({ setCompany }) {
 
 - [Daniel](https://github.com/danielhalasz) // Coach
 
-![Fenny](https://avatars.githubusercontent.com/u/97218974?v=4)
 
-- [Fenny](https://github.com/FennyWilriani) // UI/UX Designer, Frontend & DevOps
 
-![Maria](https://avatars.githubusercontent.com/u/98428800?v=4>)
 
-- [Maria](https://github.com/MMikhailova) // Project Manager Frontend , Backend
-  & DevOps
-
-![Minju ](https://avatars.githubusercontent.com/u/32439811?v=4)
-
-- [Minju](https://github.com/minjupgeorge) // Team Leader Frontend & DevOps
