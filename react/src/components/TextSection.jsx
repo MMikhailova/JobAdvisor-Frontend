@@ -4,18 +4,12 @@ export default function TextSection() {
   return (
     <Box
       sx={{
-        // display: "flex",
-        // alignItems: "stretch",
-        // textAlign: "center",
-        // justifyContent: "center",
-        // height: "auto",
-        // maxWidth: "100%",
-        // my: 4,
-
-        flexDirection: "column",
         display: "flex",
+        alignItems: "stretch",
         textAlign: "center",
-        mt: 5,
+        justifyContent: "center",
+        mx: 2,
+        flexDirection: "column",
       }}
     >
       <Grid

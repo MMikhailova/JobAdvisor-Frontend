@@ -43,7 +43,7 @@ export default function Cards({ companies, setCompany }) {
       {companies &&
         companies.map((item) => (
           <Card
-            key={item.attributes.company.data.attributes.name}
+            key={item.attributes.company.data.attributes.id}
             sx={responsive}
           >
             <CardHeader
@@ -76,7 +76,7 @@ export default function Cards({ companies, setCompany }) {
                 Description
               </Typography>
               <Typography
-                key={item.attributes.company.data.attributes.name}
+                key={item.attributes.company.data.attributes.id}
                 variant="body2"
                 color="text.secondary"
                 sx={{ mb: 0 }}
