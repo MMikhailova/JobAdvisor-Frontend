@@ -88,7 +88,7 @@ export default function Cards({ companies, setCompany }) {
               <Button
                 onClick={() => {
                   setCompany(item.attributes.company.data.attributes.name);
-                  navigate("/companyOverview");
+                  navigate(`/${item.attributes.company.data.attributes.name}`);
                 }}
                 size="small"
               >

@@ -18,7 +18,7 @@ export default function SearchBar({ setCompany }) {
           onChange={(event, newValue) => {
             data.includes(newValue) && setValue(newValue);
             setCompany(newValue);
-            navigate("/companyOverview");
+            navigate(`/${newValue}`);
           }}
           disablePortal
           inputValue={inputValue}

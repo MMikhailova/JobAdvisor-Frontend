@@ -32,7 +32,7 @@ export default function App() {
             element={<SearchResult setCompany={setCompany} tag={tag} />}
           />
           <Route
-            path="/companyOverview"
+            path="/:company"
             element={
               <CompanyOverview company={company} setCompanyId={setCompanyId} />
             }
