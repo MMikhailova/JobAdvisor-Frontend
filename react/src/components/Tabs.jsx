@@ -78,7 +78,7 @@ export default function BasicTabs({ company, setCompanyId }) {
   };
   console.log(companyData);
   return companyData.map((c) => (
-    <Card sx={{ mt: 0.1, px: 2, maxWidth: 10100 }}>
+    <Card sx={{ mt: 0.1, p: 2, maxWidth: 10100 }}>
       <CardHeader
         sx={responsiveHeader}
         avatar={
