@@ -192,7 +192,12 @@ export default function BasicTabs({ company, setCompanyId }) {
               value === 1 &&
               c.attributes.benefits_compensations &&
               c.attributes.benefits_compensations.data.map((w) => (
-                <Box sx={{ display: "flex", flexDirection: "column" }}>
+                <Box
+                  sx={{
+                    display: "flex",
+                    flexDirection: "column",
+                  }}
+                >
                   <Typography variant="h7" gutterBottom>
                     Type of benefit
                   </Typography>

@@ -9,7 +9,8 @@ export default function CompanyOverview({ company, setCompanyId }) {
     display: "flex",
     alignItems: "stretch",
     mx: { xs: 0.1, sm: 0.1, md: 5, lg: 10 },
-    mt: 3,
+    my: 3,
+    minHeight: "60vh",
   };
   const navigate = useNavigate();
   return (
