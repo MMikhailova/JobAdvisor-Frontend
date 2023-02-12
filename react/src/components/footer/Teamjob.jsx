@@ -94,7 +94,7 @@ export default function Teamjob() {
               component="div"
               align="center"
             >
-              <h6>Project Manager</h6>
+              <h6>Project Manager/Full stack developer </h6>
             </Typography>
           </CardContent>
         </Card>
@@ -125,7 +125,7 @@ export default function Teamjob() {
               component="div"
               align="center"
             >
-              <h6>Jr Developer</h6>
+              <h6>Junior Developer</h6>
             </Typography>
           </CardContent>
         </Card>
